@@ -1,7 +1,7 @@
 <search>
   <input type="text" name="search" placeholder="Search for a film">
   <p>
-    {status}
+    { status }
   </p>
   <div>
     <p each={ results }>
@@ -14,14 +14,19 @@
     var limiter;
     var phrase;
 
-    this.results = [];
-
     function updateResults(data) {
-      // !data && (self.results = { title: 'no' });
+      self.results = [];
+
       for (var film in data){
         self.results.push({ film: data[film] })
   		}
-      self.update({ status: 'Results for "' + phrase + '"' });
+
+      if (!data) {
+        self.update({ status: 'No results found for ' + phrase })
+      }else {
+        self.update({ status: 'Results for "' + phrase + '"' });
+      }
+
       console.log(self.results)
     }
 
@@ -56,6 +61,5 @@
     this.search.addEventListener('input', handleInput);
 
     console.log(this);
-    console.log(omdbImage);
   </script>
 </search>
