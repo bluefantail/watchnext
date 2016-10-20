@@ -11,7 +11,7 @@
 
     function updateResults() {
       phrase = self.search.value;
-      self.update({status: 'Searching for ' + phrase});
+      self.update({status: 'Searching for "' + phrase + '"'});
     }
 
     function handleInput() {
@@ -21,7 +21,7 @@
 
       limiter = setTimeout(function(){
         updateResults();
-  		}, 600);
+  		}, 750);
     }
 
     this.search.addEventListener('input', handleInput);
