@@ -1,0 +1,25 @@
+// Place all the styles related to the watchlist controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.search-pane {
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+input[type=text] {
+  background: #f9f9f9;
+  border: none;
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 1.2em;
+  box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 1px 3px #e9e9e9;
+}
