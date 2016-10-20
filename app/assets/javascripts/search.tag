@@ -27,11 +27,10 @@
 
       console.log(self.results)
       console.log(self);
-
     }
 
     function fetchResults() {
-      phrase = self.search.value;
+      phrase = self.search.value.trim();
       self.update({status: "Searching for '" + phrase + "'"});
 
       $.ajax({
