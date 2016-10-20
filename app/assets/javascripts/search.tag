@@ -1,6 +1,6 @@
 <search>
   <input type="text" name="search" placeholder="Search for a film">
-  <p>
+  <p class="status">
     { status }
   </p>
   <div>
@@ -22,9 +22,9 @@
   		}
 
       if (!data) {
-        self.update({ status: 'No results found for ' + phrase })
+        self.update({ status: "No results found for '" + phrase + "'" })
       }else {
-        self.update({ status: 'Results for "' + phrase + '"' });
+        self.update({ status: "Results for '" + phrase + "'" });
       }
 
       console.log(self.results)
@@ -32,7 +32,7 @@
 
     function fetchResults() {
       phrase = self.search.value;
-      self.update({status: 'Searching for "' + phrase + '"'});
+      self.update({status: "Searching for '" + phrase + "'"});
 
       $.ajax({
   			url: encodeURI(omdbSearch + phrase),

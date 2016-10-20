@@ -11,6 +11,11 @@
   max-width: 800px;
   box-sizing: border-box;
   padding: 1rem;
+
+  .status {
+    font-style: italic;
+    color: #ccc;
+  }
 }
 
 input[type=text] {
