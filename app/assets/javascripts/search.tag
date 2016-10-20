@@ -4,9 +4,7 @@
     { status }
   </p>
   <div>
-    <p each={ results }>
-      { film.Title } | { film.Year }
-    </p>
+    <result each={ results }/>
   </div>
 
   <script>
@@ -17,8 +15,8 @@
     function updateResults(data) {
       self.results = [];
 
-      for (var film in data){
-        self.results.push({ film: data[film] })
+      for (var media in data){
+        self.results.push({ media: data[media] })
   		}
 
       if (!data) {
@@ -28,6 +26,8 @@
       }
 
       console.log(self.results)
+      console.log(self);
+
     }
 
     function fetchResults() {
@@ -55,7 +55,7 @@
 
       limiter = setTimeout(function(){
         fetchResults();
-  		}, 750);
+  		}, 700);
     }
 
     this.search.addEventListener('input', handleInput);

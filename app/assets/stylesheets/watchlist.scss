@@ -28,3 +28,32 @@ input[type=text] {
   outline: none;
   box-shadow: 0 1px 3px #e9e9e9;
 }
+
+result {
+  width: 100%;
+  padding: .8em;
+  float: left;
+  transition: background .2s ease-in-out;
+  cursor: default;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: #f3f3f3;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    color: #222;
+    float: left;
+    margin-right: 1ch;
+  }
+
+  .year {
+    font-size: .7rem;
+    color: #555;
+    background-color: #e9e9e9;
+    border-radius: 3px;
+    padding: 1ch;
+    float: left;
+  }
+}
