@@ -3,15 +3,44 @@
   <p>
     {status}
   </p>
+  <div>
+    <p each={ results }>
+      { film.Title } | { film.Year }
+    </p>
+  </div>
 
   <script>
     var self = this;
     var limiter;
     var phrase;
 
-    function updateResults() {
+    this.results = [];
+
+    function updateResults(data) {
+      // !data && (self.results = { title: 'no' });
+      for (var film in data){
+        self.results.push({ film: data[film] })
+  		}
+      self.update({ status: 'Results for "' + phrase + '"' });
+      console.log(self.results)
+    }
+
+    function fetchResults() {
       phrase = self.search.value;
       self.update({status: 'Searching for "' + phrase + '"'});
+
+      $.ajax({
+  			url: encodeURI(omdbSearch + phrase),
+  			dataType: 'json',
+  			cache: false,
+  			success: function(data) {
+          var resultData = data.Response === 'True' ? data.Search : false;
+          updateResults(resultData);
+  			},
+  			error: function(xhr, status, err) {
+          console.log('Request Failed');
+  			}
+		  });
     }
 
     function handleInput() {
@@ -20,12 +49,13 @@
       clearTimeout(limiter);
 
       limiter = setTimeout(function(){
-        updateResults();
+        fetchResults();
   		}, 750);
     }
 
     this.search.addEventListener('input', handleInput);
 
     console.log(this);
+    console.log(omdbImage);
   </script>
 </search>
