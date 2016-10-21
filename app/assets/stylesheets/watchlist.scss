@@ -38,17 +38,17 @@ input[type=text] {
 
 result {
   width: 100%;
-  padding: 1em;
+  padding: 1.1em;
   float: left;
   cursor: default;
   box-sizing: border-box;
-  transition: background .2s ease-in-out;
+  transition: background .1s ease-in-out;
 
   .title {
     font-size: 1.2rem;
     color: #777;
     float: left;
-    transition: color .2s ease-in-out;
+    transition: color .1s ease-in-out;
   }
 
   .attribute {
@@ -60,6 +60,26 @@ result {
     margin-left: 1em;
     float: left;
     text-transform: capitalize;
+  }
+
+  [data-is=film-info] {
+    width: 100%;
+    float: left;
+    font-weight: 300;
+    font-size: 1rem;
+
+    // possibly move this to be more global
+    p {
+      line-height: 1.4em;
+    }
+
+    b {
+
+    }
+
+    & > .plot {
+      font-size: 1.5rem;
+    }
   }
 
   &:hover {

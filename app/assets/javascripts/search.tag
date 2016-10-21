@@ -4,7 +4,7 @@
     { status }
   </p>
   <div>
-    <result each={ results }/>
+    <result each={ results } id="{ film.imdbID }"></result>
   </div>
 
   <script>
@@ -15,8 +15,8 @@
     function updateResults(data) {
       self.results = [];
 
-      for (var media in data){
-        self.results.push({ media: data[media] })
+      for (var film in data){
+        self.results.push({ film: data[film] })
   		}
 
       if (!data) {
