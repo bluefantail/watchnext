@@ -15,8 +15,6 @@
     <b>IMDB Rating:</b> { info.imdbRating } <br>
     <b>Metascore:</b> { info.Metascore } <br>
   </p>
-  <img src="{ info.Poster }"/>
-
   <script>
     this.info = opts;
   </script>

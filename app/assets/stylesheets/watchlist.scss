@@ -6,9 +6,10 @@
   display: flex;
   justify-content: center;
 }
+
 .search-pane {
   width: 100%;
-  max-width: 750px;
+  max-width: 850px;
   box-sizing: border-box;
   padding: 1rem;
 
@@ -62,31 +63,43 @@ result {
     text-transform: capitalize;
   }
 
-  [data-is=film-info] {
-    width: 100%;
-    float: left;
-    font-weight: 300;
-    font-size: 1rem;
-
-    // possibly move this to be more global
-    p {
-      line-height: 1.4em;
-    }
-
-    b {
-
-    }
-
-    & > .plot {
-      font-size: 1.5rem;
-    }
-  }
-
   &:hover {
     background-color: #f3f3f3;
 
     & > .title {
       color: #000;
     }
+  }
+}
+
+.result-info {
+  width: 100%;
+  float: left;
+  font-weight: 300;
+  font-size: 1rem;
+
+  [data-is=film-poster] {
+    background-color: #eee;
+    background-size: cover;
+    background-position: top;
+    width: 30%;
+    padding-top: 45%;
+    float: left;
+  }
+
+  [data-is=film-info] {
+    width: 70%;
+    float: left;
+    padding: 0 1.2em;
+    box-sizing: border-box;
+
+    & > .plot {
+      font-size: 1.5rem;
+    }
+  }
+
+  // possibly move this to be more global
+  p {
+    line-height: 1.4em;
   }
 }
